@@ -1,6 +1,7 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace UdemyRabbitMQ.subcriberHeaderExchange
@@ -18,6 +19,8 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
 
             var channel = connection.CreateModel();
 
+            channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Topic); // varsa herhangi birşey olmayacak. yoksa oluşacak
+
             channel.BasicQos(0, 1, false);
 
             var consumer = new EventingBasicConsumer(channel);
@@ -26,11 +29,17 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
 
             var queueName = channel.QueueDeclare().QueueName; // channel üzerinden random bir kuyruk ismi bana geliyor.
 
-            // var routeKey = "*.Error.*";
-            // var routeKey = "*.*.Warning";
-            var routeKey = "Info.#";  // bu kısımda hata var.
+            // bind işlemi gerçekleştircez.
 
-            channel.QueueBind(queueName, "logs-topic", routeKey);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
+            Dictionary<string, object> headers = new Dictionary<string, object>();
+
+            headers.Add("format", "pdf");
+            headers.Add("shape", "a4");
+            headers.Add("x-match","all");  // key value çiftlerinin hepsi eşleşmeli.
+
+
+
+            channel.QueueBind(queueName, "header-exchange",String.Empty,headers);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
 
             channel.BasicConsume(queueName, false, consumer);   // hata burada. ben bastıramıyorum :(
 
@@ -48,6 +57,8 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
                 channel.BasicAck(e.DeliveryTag, false);
 
             };
+
+            Console.ReadLine();
         }
     }
 }

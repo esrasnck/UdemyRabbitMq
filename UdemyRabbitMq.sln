@@ -15,17 +15,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.publisherFano
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.subcriberFanout", "UdemyRabbitMQ.subcriberFanout\UdemyRabbitMQ.subcriberFanout.csproj", "{8C434893-8902-44B4-883A-EE452C4B3FF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.publisherDirectExchange", "UdemyRabbitMQ.publisherDirectExchange\UdemyRabbitMQ.publisherDirectExchange.csproj", "{B599251C-B4E4-47A1-88D7-4C61BE8A70C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.publisherDirectExchange", "UdemyRabbitMQ.publisherDirectExchange\UdemyRabbitMQ.publisherDirectExchange.csproj", "{B599251C-B4E4-47A1-88D7-4C61BE8A70C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.subcriberDirectExchange", "UdemyRabbitMQ.subcriberDirectExchange\UdemyRabbitMQ.subcriberDirectExchange.csproj", "{708D701D-24AE-45AF-8113-CF39A5BB9F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.subcriberDirectExchange", "UdemyRabbitMQ.subcriberDirectExchange\UdemyRabbitMQ.subcriberDirectExchange.csproj", "{708D701D-24AE-45AF-8113-CF39A5BB9F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.publisherTopicExchange", "UdemyRabbitMQ.publisherTopicExchange\UdemyRabbitMQ.publisherTopicExchange.csproj", "{48C1F081-EDBF-4398-8D99-24A21385FBEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.publisherTopicExchange", "UdemyRabbitMQ.publisherTopicExchange\UdemyRabbitMQ.publisherTopicExchange.csproj", "{48C1F081-EDBF-4398-8D99-24A21385FBEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.subcriberTopicExchange", "UdemyRabbitMQ.subcriberTopicExchange\UdemyRabbitMQ.subcriberTopicExchange.csproj", "{587DBB13-BE2E-451D-A69B-96FCBE8A51F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.subcriberTopicExchange", "UdemyRabbitMQ.subcriberTopicExchange\UdemyRabbitMQ.subcriberTopicExchange.csproj", "{587DBB13-BE2E-451D-A69B-96FCBE8A51F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.subcriberHeaderExchange", "UdemyRabbitMQ.subcriberHeaderExchange\UdemyRabbitMQ.subcriberHeaderExchange.csproj", "{8E976C19-BDCC-4B45-B221-ABD2405A9498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.subcriberHeaderExchange", "UdemyRabbitMQ.subcriberHeaderExchange\UdemyRabbitMQ.subcriberHeaderExchange.csproj", "{8E976C19-BDCC-4B45-B221-ABD2405A9498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demyRabbitMQ.publisherHeaderExchange", "demyRabbitMQ.publisherHeaderExchange\demyRabbitMQ.publisherHeaderExchange.csproj", "{5E769EBC-1889-4A13-BD61-13070AFB3F0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.publisherHeaderExchange", "UdemyRabbitMQ.publisherHeaderExchange\UdemyRabbitMQ.publisherHeaderExchange.csproj", "{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,10 +77,10 @@ Global
 		{8E976C19-BDCC-4B45-B221-ABD2405A9498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E976C19-BDCC-4B45-B221-ABD2405A9498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E976C19-BDCC-4B45-B221-ABD2405A9498}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E769EBC-1889-4A13-BD61-13070AFB3F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E769EBC-1889-4A13-BD61-13070AFB3F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E769EBC-1889-4A13-BD61-13070AFB3F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E769EBC-1889-4A13-BD61-13070AFB3F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
