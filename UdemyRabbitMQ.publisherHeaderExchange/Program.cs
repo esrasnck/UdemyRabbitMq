@@ -19,10 +19,10 @@ namespace UdemyRabbitMQ.publisherHeaderExchange
             var channel = connection.CreateModel();
 
 
-            channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Topic);
+            channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Headers);
 
             Dictionary<string, object> headers = new Dictionary<string, object>(); // header dictionary tipinde.
-            headers.Add("format1", "pdf");
+            headers.Add("format", "pdf");
             headers.Add("shape2", "a4");
          
 
@@ -33,7 +33,7 @@ namespace UdemyRabbitMQ.publisherHeaderExchange
             // Basic property oluşturuyoruz. header'ı da buna gönderiyoruz.
 
 
-            channel.BasicPublish("header-exchange",string.Empty,properties,Encoding.UTF8.GetBytes("header mesajim"));
+            channel.BasicPublish("header-exchange", string.Empty,properties,Encoding.UTF8.GetBytes("header mesajim"));
 
             // kuyruk consumer tarafında oluşcak
 

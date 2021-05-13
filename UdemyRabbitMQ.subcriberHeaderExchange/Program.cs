@@ -19,7 +19,7 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
 
             var channel = connection.CreateModel();
 
-            channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Topic); // varsa herhangi birşey olmayacak. yoksa oluşacak
+            // channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Headers); // varsa herhangi birşey olmayacak. yoksa oluşacak
 
             channel.BasicQos(0, 1, false);
 
@@ -35,13 +35,13 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
 
             headers.Add("format", "pdf");
             headers.Add("shape", "a4");
-            headers.Add("x-match","all");  // key value çiftlerinin hepsi eşleşmeli.
+            headers.Add("x-match","any");  // key value çiftlerinin hepsi eşleşmeli.
 
             //headers.Add("x-match","any"); biri eşleşse yeterli.
 
 
 
-            channel.QueueBind(queueName, "header-exchange",String.Empty,headers);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
+            channel.QueueBind(queueName, "header-exchange", String.Empty,headers);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
 
             channel.BasicConsume(queueName, false, consumer);   // hata burada. ben bastıramıyorum :(
 
