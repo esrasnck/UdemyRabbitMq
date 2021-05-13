@@ -1,10 +1,12 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Shared;
 using System;
+using System.Collections.Generic;
 using System.Text;
-using System.Threading;
+using System.Text.Json;
 
-namespace UdemyRabbitMQ.subcriberTopicExchange
+namespace UdemyRabbitMQ.complexTypeSubcriber
 {
     class Program
     {
@@ -18,6 +20,8 @@ namespace UdemyRabbitMQ.subcriberTopicExchange
 
             var channel = connection.CreateModel();
 
+            channel.ExchangeDeclare("header-exchange", durable: true, type: ExchangeType.Topic); // varsa herhangi birşey olmayacak. yoksa oluşacak
+
             channel.BasicQos(0, 1, false);
 
             var consumer = new EventingBasicConsumer(channel);
@@ -26,11 +30,19 @@ namespace UdemyRabbitMQ.subcriberTopicExchange
 
             var queueName = channel.QueueDeclare().QueueName; // channel üzerinden random bir kuyruk ismi bana geliyor.
 
-            // var routeKey = "*.Error.*";
-           // var routeKey = "*.*.Warning";
-            var routeKey = "Error.#";  // bu kısımda hata var.
+            // bind işlemi gerçekleştircez.
 
-            channel.QueueBind(queueName,"logs-topic", routeKey);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
+            Dictionary<string, object> headers = new Dictionary<string, object>();
+
+            headers.Add("format", "pdf");
+            headers.Add("shape", "a4");
+            headers.Add("x-match", "any");  // key value çiftlerinin hepsi eşleşmeli.
+
+            //headers.Add("x-match","any"); biri eşleşse yeterli.
+
+
+
+            channel.QueueBind(queueName, "header-exchange", String.Empty, headers);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
 
             channel.BasicConsume(queueName, false, consumer);   // hata burada. ben bastıramıyorum :(
 
@@ -40,20 +52,14 @@ namespace UdemyRabbitMQ.subcriberTopicExchange
             {
                 var message = Encoding.UTF8.GetString(e.Body.ToArray());
 
-              
-                Console.WriteLine("Gelen mesaj :" + message);
-            
+                Product product = JsonSerializer.Deserialize<Product>(message);
+
+                Console.WriteLine($"Gelen mesaj : { product.Id} - { product.Name} - { product.Price} - { product.Stock}" );
+
 
                 channel.BasicAck(e.DeliveryTag, false);
 
             };
-
-
-      /*
-       * önce consume kısmını çalıştırmakta fayda var. yada consume ile publisher ı aynı anda çalıştırmak gerek. yoksa publisherde üretilen mesajlar, herhangi bir kuyruk olmadı için boşa gidiyor. consumer da bunu dinlemiypr.
-       * 
-       * */
-
 
             Console.ReadLine();
         }

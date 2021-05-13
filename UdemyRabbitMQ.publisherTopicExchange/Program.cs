@@ -34,7 +34,7 @@ namespace UdemyRabbitMQ.publisherTopicExchange
                 LogNames log3 = (LogNames)rnd.Next(1, 5);
 
 
-                var routeKey = $"route-{log1}.{log2}.{log3}"; // hangi rootu hangi rootkey e karşılık gelecek. artık onu belirtmem gerek
+                var routeKey = $"{log1}.{log2}.{log3}"; // hangi rootu hangi rootkey e karşılık gelecek. artık onu belirtmem gerek
 
                 string message = $"log-type :{log1}-{log2}-{log3}";
                 var messageBody = Encoding.UTF8.GetBytes(message);

@@ -27,6 +27,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRabbitMQ.subcriberHead
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.publisherHeaderExchange", "UdemyRabbitMQ.publisherHeaderExchange\UdemyRabbitMQ.publisherHeaderExchange.csproj", "{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.complexTypePublisher", "UdemyRabbitMQ.complexTypePublisher\UdemyRabbitMQ.complexTypePublisher.csproj", "{6900FC79-4B96-4996-A02D-75E5896B57A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRabbitMQ.complexTypeSubcriber", "UdemyRabbitMQ.complexTypeSubcriber\UdemyRabbitMQ.complexTypeSubcriber.csproj", "{FEB1982C-FE81-4A63-AF65-00797A764A90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{32E73E6A-E67F-4C92-A821-85969975506F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CC30346-BE2C-4FA3-BADB-8DF790A83CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6900FC79-4B96-4996-A02D-75E5896B57A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6900FC79-4B96-4996-A02D-75E5896B57A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6900FC79-4B96-4996-A02D-75E5896B57A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6900FC79-4B96-4996-A02D-75E5896B57A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB1982C-FE81-4A63-AF65-00797A764A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB1982C-FE81-4A63-AF65-00797A764A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB1982C-FE81-4A63-AF65-00797A764A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB1982C-FE81-4A63-AF65-00797A764A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E73E6A-E67F-4C92-A821-85969975506F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E73E6A-E67F-4C92-A821-85969975506F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E73E6A-E67F-4C92-A821-85969975506F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E73E6A-E67F-4C92-A821-85969975506F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

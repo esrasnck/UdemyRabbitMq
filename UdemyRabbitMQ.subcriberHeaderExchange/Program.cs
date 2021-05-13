@@ -37,6 +37,8 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
             headers.Add("shape", "a4");
             headers.Add("x-match","all");  // key value çiftlerinin hepsi eşleşmeli.
 
+            //headers.Add("x-match","any"); biri eşleşse yeterli.
+
 
 
             channel.QueueBind(queueName, "header-exchange",String.Empty,headers);     // bind edecez. subrciber düştüğünde kuyruk da düşsün.
@@ -49,10 +51,9 @@ namespace UdemyRabbitMQ.subcriberHeaderExchange
             {
                 var message = Encoding.UTF8.GetString(e.Body.ToArray());
 
-                //Thread.Sleep(1500);
+              
                 Console.WriteLine("Gelen mesaj :" + message);
-                // mesajı txt dosyasına yazdırıyoruz.
-                // File.AppendAllText("log-critical.txt",message +"\n");
+            
 
                 channel.BasicAck(e.DeliveryTag, false);
 
